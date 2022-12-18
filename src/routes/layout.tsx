@@ -1,20 +1,14 @@
-import { component$, Slot } from '@builder.io/qwik';
-import Header from '../components/header/header';
+import { component$, Slot } from "@builder.io/qwik";
+import { DocumentHead } from "@builder.io/qwik-city";
 
-export default component$(() => {
-  return (
-    <>
-      <main>
-        <Header />
-        <section>
-          <Slot />
-        </section>
-      </main>
-      <footer>
-        <a href="https://www.builder.io/" target="_blank">
-          Made with ♡ by Builder.io
-        </a>
-      </footer>
-    </>
-  );
-});
+export default component$(() => <Slot />);
+
+export const head: DocumentHead = {
+  title: "Marco Bellezza - full-stack dev",
+  meta: [
+    {
+      name: "description",
+      content: "Personal and professional site of Marco Bellezza",
+    },
+  ],
+};
