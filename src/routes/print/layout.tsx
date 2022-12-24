@@ -6,7 +6,7 @@ export default component$(() => {
 
   return (
     <div class="grid center">
-      <div class="width print pad font">
+      <div class="pad width">
         <Slot />
       </div>
     </div>

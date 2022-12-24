@@ -1,8 +1,10 @@
 import { component$ } from "@builder.io/qwik";
+import Print from "../print/index.md?inline";
 
-/**
- * This will contain the web layout.
- */
-export const Layout = component$(() => {
-  return <div></div>;
+export default component$(() => {
+  return (
+    <div>
+      <Print />
+    </div>
+  );
 });
