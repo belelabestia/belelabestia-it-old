@@ -17,7 +17,9 @@ type LayoutType = "Mobile" | "Desktop" | undefined;
  */
 export const WebLayout = component$(() => {
   const type = useSignal<LayoutType>();
+  console.log(type.value);
   const Layout = getLayout(type.value);
+  console.log(Layout);
 
   useClientEffect$(() => bindMedia(type));
 
@@ -35,11 +37,7 @@ export const getLayoutType = (
 ): LayoutType => (mql.matches ? "Mobile" : "Desktop");
 
 export const getLayout = (type: LayoutType): Component<{}> =>
-  type === "Mobile"
-    ? MobileLayout
-    : type === "Desktop"
-    ? DesktopLayout
-    : () => <></>;
+  type === "Mobile" ? MobileLayout : DesktopLayout;
 
 export const bindMedia = (type: Signal<LayoutType>) => {
   const mql = matchMedia("(max-width: 70rem)");

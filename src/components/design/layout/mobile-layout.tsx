@@ -6,12 +6,11 @@ import { component$, Slot } from "@builder.io/qwik";
  * maybe a floating button that opens
  * a floating menu instead of the classic navbar.
  */
-export const MobileLayout = component$(() => {
-  return (
-    <div class="grid center">
-      <div class="pad width">
-        <Slot />
-      </div>
+export const MobileLayout = component$(() => (
+  <div class="grid center">
+    <div class="pad width">
+      MOBILE
+      <Slot />
     </div>
-  );
-});
+  </div>
+));

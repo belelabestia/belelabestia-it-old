@@ -7,12 +7,11 @@ import { component$, Slot } from "@builder.io/qwik";
  * profile picture and navigation menu on the left,
  * and contents in the center-right.
  */
-export const DesktopLayout = component$(() => {
-  return (
-    <div class="grid center">
-      <div class="pad width">
-        <Slot />
-      </div>
+export const DesktopLayout = component$(() => (
+  <div class="grid center">
+    <div class="pad width">
+      DESKTOP
+      <Slot />
     </div>
-  );
-});
+  </div>
+));
