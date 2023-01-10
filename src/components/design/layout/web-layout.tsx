@@ -6,6 +6,10 @@ import {
   useClientEffect$,
   useSignal,
 } from "@builder.io/qwik";
+import { useNavigate } from "@builder.io/qwik-city";
+import { navigate } from "~/routes/layout";
+import { Button } from "../button";
+import { Overlay } from "../overlay";
 import { DesktopLayout } from "./desktop-layout";
 import { MobileLayout } from "./mobile-layout";
 
@@ -16,10 +20,9 @@ type LayoutType = "Mobile" | "Desktop" | undefined;
  * and select mobile or desktop layout.
  */
 export const WebLayout = component$(() => {
+  const nav = useNavigate();
   const type = useSignal<LayoutType>();
-  console.log(type.value);
   const Layout = getLayout(type.value);
-  console.log(Layout);
 
   useClientEffect$(() => bindMedia(type));
 
@@ -27,6 +30,13 @@ export const WebLayout = component$(() => {
     <div class="web text background">
       <Layout>
         <Slot />
+        <Overlay>
+          <div class="bottom pad">
+            <Button onClick$={() => navigate(nav, "/print")}>
+              See printable
+            </Button>
+          </div>
+        </Overlay>
       </Layout>
     </div>
   );

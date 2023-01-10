@@ -1,0 +1,34 @@
+@use 'colors'
+@use 'sass:color'
+
+.button
+  width: 10rem
+  font-weight: bold
+  cursor: pointer
+  border-width: 2px
+  border-style: solid
+  border-radius: 4px
+  transition: all 0.1s ease-in-out
+
+  &.pad
+    padding: 0.75rem
+
+.print
+  & .button
+    background-color: color.change(white, $alpha: 0.8)
+    color: initial
+    border-color: black
+    box-shadow: 0 0 8px 0 color.change(black, $alpha: 0.6)
+
+    &:active
+      box-shadow: 0 0 0 0 color.change(black, $alpha: 0.6)
+
+.web
+  & .button
+    background-color: color.change(colors.$background, $alpha: 0.8)
+    color: colors.$highlight
+    border-color: colors.$highlight
+    box-shadow: 0 0 8px 0 color.change(colors.$highlight, $alpha: 0.6)
+
+    &:active
+      box-shadow: 0 0 0 0 color.change(colors.$highlight, $alpha: 0.6)
