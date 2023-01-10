@@ -1,8 +1,8 @@
 import { component$, Slot } from "@builder.io/qwik";
-import { PrintLayout } from "~/components/design/layout/print-layout";
+import { WebLayout } from "@/design/layout/web-layout";
 
 export default component$(() => (
-  <PrintLayout>
+  <WebLayout>
     <Slot />
-  </PrintLayout>
+  </WebLayout>
 ));

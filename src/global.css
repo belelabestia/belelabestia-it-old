@@ -1,13 +1,10 @@
-.nomargin {
-  margin: 0;
-}
-
-h1 {
+hr {
+  border: none;
   border-bottom: 1px solid grey;
 }
 
-.pad {
-  padding: 1rem;
+.nomargin {
+  margin: 0;
 }
 
 .font {
@@ -21,6 +18,30 @@ h1 {
 
 .grid.center {
   justify-items: center;
+}
+
+.grid.main-with-sides {
+  grid-template-columns: 1fr auto 1fr;
+}
+
+.width {
+  max-width: 50rem;
+}
+
+.pad {
+  padding: 1rem;
+}
+
+.web.text {
+  color: hsl(0, 0%, 75%);
+}
+
+.web.text a {
+  color: hsl(100deg, 70%, 60%);
+}
+
+.web.background {
+  background-color: hsl(320deg, 60%, 5%);
 }
 
 @media print {
