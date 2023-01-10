@@ -1,5 +1,5 @@
 import { component$, Slot } from "@builder.io/qwik";
-import { DocumentHead, useNavigate } from "@builder.io/qwik-city";
+import { DocumentHead, useLocation, useNavigate } from "@builder.io/qwik-city";
 import { Overlay } from "~/components/design/overlay";
 
 export const head: DocumentHead = {
@@ -13,6 +13,7 @@ export const head: DocumentHead = {
 };
 
 export default component$(() => {
+  const loc = useLocation();
   const nav = useNavigate();
 
   return (
@@ -20,8 +21,11 @@ export default component$(() => {
       <Slot />
       <Overlay>
         <div class="bottom">
-          <button onClick$={() => navigate(nav, "/web")}>Web</button>
-          <button onClick$={() => navigate(nav, "/print")}>Print</button>
+          {loc.pathname == "/web/" ? (
+            <button onClick$={() => navigate(nav, "/print")}>Print</button>
+          ) : (
+            <button onClick$={() => navigate(nav, "/web")}>Web</button>
+          )}
         </div>
       </Overlay>
     </div>
