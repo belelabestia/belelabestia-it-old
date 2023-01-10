@@ -13,7 +13,7 @@ type LayoutType = "Mobile" | "Desktop" | undefined;
 
 /**
  * this component will observe the screen size
- * and select landscape or portrait layout.
+ * and select mobile or desktop layout.
  */
 export const WebLayout = component$(() => {
   const type = useSignal<LayoutType>();

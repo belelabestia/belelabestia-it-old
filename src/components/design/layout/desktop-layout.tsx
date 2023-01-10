@@ -1,6 +1,6 @@
 import { component$, Slot } from "@builder.io/qwik";
-import { Toc } from "~/components/toc";
-import { Picture } from "../picture";
+// import { Toc } from "~/components/toc";
+// import { Picture } from "../picture";
 
 /**
  * this is inspired from the GH profile:
@@ -9,11 +9,7 @@ import { Picture } from "../picture";
  */
 export const DesktopLayout = component$(() => {
   return (
-    <div class="grid center main-with-sides">
-      <div style="display: flex; flex-direction: column">
-        <Picture />
-        <Toc />
-      </div>
+    <div class="grid center">
       <div class="pad width">
         <Slot />
       </div>
