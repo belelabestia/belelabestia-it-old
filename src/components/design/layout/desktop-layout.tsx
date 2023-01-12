@@ -1,4 +1,5 @@
 import { component$, Slot } from "@builder.io/qwik";
+import { ProfilePicture } from "../profile-picture";
 // import { Toc } from "~/components/toc";
 // import { Picture } from "../picture";
 
@@ -8,9 +9,11 @@ import { component$, Slot } from "@builder.io/qwik";
  * and contents in the center-right.
  */
 export const DesktopLayout = component$(() => (
-  <div class="grid center">
+  <div class="grid center main-with-sides">
+    <div class="pad top">
+      <ProfilePicture />
+    </div>
     <div class="pad width">
-      DESKTOP
       <Slot />
     </div>
   </div>

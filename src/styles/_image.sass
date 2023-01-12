@@ -1,0 +1,11 @@
+@use 'colors'
+@use 'sass:color'
+
+.image
+  width: 15rem
+
+  & > img
+    width: 100%
+    border-radius: 10%
+    border: 2px solid colors.$highlight
+    box-shadow: 0 0 8px 0 color.change(colors.$highlight, $alpha: 0.6)
