@@ -1,6 +1,6 @@
 import { component$, Slot } from "@builder.io/qwik";
 import { useNavigate } from "@builder.io/qwik-city";
-import { navigate } from "~/routes/layout";
+import { navigate } from "~/utils/navigate";
 import { Button } from "../button";
 import { Overlay } from "../overlay";
 

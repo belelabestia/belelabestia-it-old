@@ -1,5 +1,5 @@
 import { component$, Slot } from "@builder.io/qwik";
-import { DocumentHead, useNavigate } from "@builder.io/qwik-city";
+import { DocumentHead } from "@builder.io/qwik-city";
 
 export const head: DocumentHead = {
   title: "Marco Bellezza - full-stack dev",
@@ -12,7 +12,3 @@ export const head: DocumentHead = {
 };
 
 export default component$(() => <Slot />);
-
-export const navigate = (nav: ReturnType<typeof useNavigate>, path: string) => {
-  nav.path = path;
-};

@@ -1,9 +1,5 @@
 ## About me
 
-[Skip to dev career](#developer-career) | [Go to skills](#skills) | [See my channels](#channels)
-
----
-
 I'm a human being living in Italy, near Milan.  
 I love music and technology, reading and writing, science and philosophy.
 
