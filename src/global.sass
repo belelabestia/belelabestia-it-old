@@ -5,8 +5,16 @@
 @use 'styles/image'
 @use 'styles/cover'
 @use 'styles/colors'
+@use 'styles/themes'
 
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap')
+
+html
+  scroll-behavior: smooth
+
+body
+  margin: 0
+  font-family: 'Ubuntu', sans-serif
 
 h1
   border-bottom: 1px solid colors.$text
@@ -16,17 +24,14 @@ h1
 h2
   text-align: center
 
+p
+  margin-inline: 2rem
+
 hr
   border: none
   border-bottom: 1px solid colors.$text
   width: 60vw
   margin-block: 4rem
-
-.nomargin
-  margin: 0
-
-.font
-  font-family: 'Ubuntu', sans-serif
 
 .width
   max-width: 50rem

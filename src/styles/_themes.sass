@@ -1,0 +1,22 @@
+@use 'colors/dark'
+@use 'colors/light'
+
+@mixin light()
+  color: light.$content
+  background-color: light.$background
+
+  & a
+    color: light.$highlight
+
+@mixin dark()
+  background-color: dark.$background
+  color: dark.$content
+
+  & a
+    color: dark.$highlight
+
+.dark
+  @include dark
+
+.light
+  @include light

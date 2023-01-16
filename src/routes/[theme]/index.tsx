@@ -1,4 +1,5 @@
-import { component$ } from "@builder.io/qwik";
+import { component$, useClientEffect$ } from "@builder.io/qwik";
+import { useLocation } from "@builder.io/qwik-city";
 import { ProfilePicture } from "~/components/design/profile-picture";
 import Title from "@/content/title.md?inline";
 import Toc from "@/content/toc.md?inline";
@@ -7,17 +8,23 @@ import AboutMe from "@/content/about-me.md?inline";
 import DeveloperCareer from "@/content/developer-career.mdx?inline";
 import Skills from "@/content/skills.mdx?inline";
 import Channels from "@/content/channels.md?inline";
+import ThemeSwitch from "@/content/theme-switch.md?inline";
+import { getTheme } from "~/utils/getTheme";
 
 export default component$(() => {
+  const loc = useLocation();
+  const theme = getTheme(loc.params);
+
   return (
-    <div class="web background text">
+    <div class={theme}>
       <div class="cover pad grid center">
         <ProfilePicture />
         <Title />
         <Toc />
+        <ThemeSwitch />
       </div>
       <div class="pad grid center">
-        <hr />
+        <hr style="width: 80vw" />
         <div class="width">
           <Info />
         </div>
@@ -38,7 +45,7 @@ export default component$(() => {
           <Channels />
         </div>
       </div>
-      <hr />
+      <hr style="width: 80vw" />
       <div style="height: 30vh"></div>
     </div>
   );

@@ -24,7 +24,7 @@ export default component$(() => {
         <link rel="manifest" href="/pwa.webmanifest" />
         <RouterHead />
       </head>
-      <body class="nomargin font">
+      <body>
         <RouterOutlet />
         <ServiceWorkerRegister />
       </body>
