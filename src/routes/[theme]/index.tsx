@@ -1,6 +1,7 @@
 import { component$ } from "@builder.io/qwik";
 import { RequestHandler, useLocation } from "@builder.io/qwik-city";
 import { ProfilePicture } from "@/profile-picture";
+import { getTheme } from "~/utils/getTheme";
 import Title from "@/title.md?inline";
 import Toc from "@/toc.md?inline";
 import Info from "@/info.md?inline";
@@ -9,7 +10,7 @@ import DeveloperCareer from "@/developer-career.mdx?inline";
 import Skills from "@/skills.mdx?inline";
 import Channels from "@/channels.md?inline";
 import ThemeSwitch from "@/theme-switch.md?inline";
-import { getTheme } from "~/utils/getTheme";
+import BackToTop from "@/back-to-top.md?inline";
 
 export const onGet: RequestHandler = (request) => {
   if (!["/light/", "/dark/"].includes(request.url.pathname))
@@ -51,7 +52,9 @@ export default component$(() => {
         </div>
         <hr />
       </div>
-      <div class="end"></div>
+      <div class="end grid">
+        <BackToTop />
+      </div>
     </div>
   );
 });
