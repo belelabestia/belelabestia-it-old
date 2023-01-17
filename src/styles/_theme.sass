@@ -1,0 +1,41 @@
+@use 'colors/dark'
+@use 'colors/light'
+
+// this is used also for print media
+@mixin light()
+  color: light.$content
+  background-color: light.$background
+
+  & a
+    color: light.$highlight
+
+  h1
+    border-bottom: 1px solid light.$content
+
+  hr
+    border-bottom: 1px solid light.$content
+
+.light
+  @include light
+
+.dark
+  background-color: dark.$background
+  color: dark.$content
+
+  & a
+    color: dark.$highlight
+
+  h1
+    border-bottom: 1px solid dark.$content
+
+  hr
+    border-bottom: 1px solid dark.$content
+
+@media print
+  p,
+  ul,
+  ol
+    page-break-inside: avoid
+
+  body .dark
+    @include light
