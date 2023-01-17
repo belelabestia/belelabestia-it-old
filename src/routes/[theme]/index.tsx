@@ -22,13 +22,13 @@ export default component$(() => {
 
   return (
     <div class={theme}>
-      <div class="grid center pad cover">
+      <div class="grid pad cover">
         <ProfilePicture />
         <Title />
         <Toc />
         <ThemeSwitch />
       </div>
-      <div class="grid center pad">
+      <div class="grid pad">
         <hr />
         <div class="width">
           <Info />

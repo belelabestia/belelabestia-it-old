@@ -1,6 +1,3 @@
-@use 'styles/grid'
-@use 'styles/theme'
-
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap')
 
 html
@@ -31,6 +28,11 @@ hr
   &:first-child, &:last-child
     width: 80vw
 
+.grid
+  display: grid
+  place-content: center
+  place-items: center
+
 .width
   max-width: 50rem
 
@@ -50,3 +52,38 @@ hr
 
 .end
   height: 30vh
+
+@mixin light()
+  --background: white
+  --content: black
+  --highlight: black
+
+.theme
+  color: var(--content)
+  background-color: var(--background)
+
+  & a
+    color: var(--highlight)
+
+  h1
+    border-bottom: 1px solid var(--content)
+
+  hr
+    border-bottom: 1px solid var(--content)
+
+  &.light
+    @include light
+
+  &.dark
+    --background: hsl(320deg 50% 4%)
+    --content: hsl(0, 0%, 75%)
+    --highlight: hsl(100deg, 70%, 60%)
+
+@media print
+  p,
+  ul,
+  ol
+    page-break-inside: avoid
+
+  .theme.dark
+    @include light
